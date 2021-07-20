@@ -1,35 +1,26 @@
-PROGRAM área_e_circunferência_de_circulo
 
-! Este programa encontra e mostra a área e a circunferência de um circulo.
+	REAL pi ; PARAMETER (pi=3.141593)  ! linhas de comando múltiplos
 
-!O programa utiliza o raio do circulo e a unidade de medida definidos pelo usuário.
+	REAL r, área, circunferência
 
-!Declarações
+	CHARACTER *12 unidade
 
-REAL pi ; PARAMETER (pi=3.141593)  ! linhas de comando múltiplos
+	!Leitura dos valores de raio e unidade.
 
-REAL r, área, circunferência
+	PRINT *, `Entre com a unidade a ser utilizada (entre apóstrofes)` ; READ *, unidade
 
-CHARACTER *12 unidade
+	PRINT *, `Entre com o raio ( em `, unidade, `)`  ; READ *, r
 
-!Leitura dos valores de raio e unidade.
+	!Encontrando a área
 
-PRINT *, `Entre com a unidade a ser utilizada (entre apóstrofes)` ; READ *, unidade
+	área=pi*r**2
 
-PRINT *, `Entre com o raio ( em `, unidade, `)`  ; READ *, r
+	circunferência=2.0*pi*r
 
-!Encontrando a área
+	PRINT *, `A área é de`, área, unidades, `quadrados`
 
-área=pi*r**2
+	PRINT *, `A circunferência é de`, circunferência, ` `, unidade
 
-!Encontrando a circunferência
-
-circunferência=2.0*pi*r
-
-!Imprimir os valores da área e da circunferência
-
-PRINT *, `A área é de`, área, unidades, `quadrados`
-
-PRINT *, `A circunferência é de`, circunferência, ` `, unidade
-
-END
+	END
+	
+	

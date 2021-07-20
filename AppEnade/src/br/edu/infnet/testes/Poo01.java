@@ -17,6 +17,7 @@ public class Poo01 {
 	private static final String[] CURSOS = new String[] {"COMPUTAÇÃO", "ENGENHARIA", "SISTEMAS"};	
 
 	public static void main(String[] args) {
+		
 		nome = "Jose";
 		idade = 42;
 		salarioBase = 999;
