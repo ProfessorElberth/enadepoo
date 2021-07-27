@@ -3,8 +3,14 @@ package br.edu.infnet.model.domain;
 import br.edu.infnet.model.auxiliar.Constante;
 
 public class Professor extends Funcionario {
+
 	private int qtdeDisciplina;
 	
+	public Professor(String nome, int idade, int qtdeDisciplina) {
+		super(nome, idade);
+		this.qtdeDisciplina = qtdeDisciplina;
+	}
+
 	@Override
 	protected float calcularSalarioLiquido() {
 		return super.calcularSalarioLiquido() + (Constante.VL_DISC * qtdeDisciplina);

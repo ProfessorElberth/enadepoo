@@ -1,10 +1,15 @@
 package br.edu.infnet.model.domain;
 
-public class Funcionario {
+public abstract class Funcionario {
 	private String nome;
 	private int idade;
 	protected float salarioBase;
 	protected boolean doutorado;
+	
+	public Funcionario(String nome, int idade) {
+		this.setNome(nome);
+		this.setIdade(idade);
+	}
 	
 	protected float calcularSalarioLiquido(){
 		return doutorado ? salarioBase*2 : salarioBase;

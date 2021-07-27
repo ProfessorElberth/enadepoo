@@ -5,8 +5,14 @@ import java.util.Arrays;
 import br.edu.infnet.model.auxiliar.Constante;
 
 public class Coordenador extends Funcionario {
+
 	private String curso;
 	
+	public Coordenador(String nome, int idade, String curso) {
+		super(nome, idade);
+		this.curso = curso;
+	}
+
 	@Override
 	protected float calcularSalarioLiquido() {
 		return super.calcularSalarioLiquido() + 
