@@ -11,6 +11,8 @@ public abstract class Funcionario {
 		this.setIdade(idade);
 	}
 	
+	public abstract String obterApresentacao();
+	
 	protected float calcularSalarioLiquido(){
 		return doutorado ? salarioBase*2 : salarioBase;
 	}

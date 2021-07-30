@@ -1,31 +1,37 @@
 package br.edu.infnet.model.domain;
 
+import java.util.List;
+
 import br.edu.infnet.model.auxiliar.Constante;
 
 public class Professor extends Funcionario {
 
-	private int qtdeDisciplina;
+	private List<String> disciplinas;
 	
-	public Professor(String nome, int idade, int qtdeDisciplina) {
+	public Professor(String nome, int idade, List<String> disciplinas) {
 		super(nome, idade);
-		this.qtdeDisciplina = qtdeDisciplina;
+		this.disciplinas = disciplinas;
 	}
 
 	@Override
+	public String obterApresentacao() {
+		return "Sou professor, tenho " + this.getIdade() + "anos e leciono " + disciplinas.size() + " matérias";
+	}
+	
+	@Override
 	protected float calcularSalarioLiquido() {
-		return super.calcularSalarioLiquido() + (Constante.VL_DISC * qtdeDisciplina);
+		return super.calcularSalarioLiquido() + (Constante.VL_DISC * disciplinas.size());
 	}
 	
 	public void impressao() {
 		super.impressao();
-		System.out.println("Quantidade de disciplinas: " + qtdeDisciplina);
+		System.out.println("Quantidade de disciplinas: " + disciplinas.size());
 	}
 
-	public int getQtdeDisciplina() {
-		return qtdeDisciplina;
+	public List<String> getDisciplinas() {
+		return disciplinas;
 	}
-
-	public void setQtdeDisciplina(int qtdeDisciplina) {
-		this.qtdeDisciplina = qtdeDisciplina;
+	public void setDisciplinas(List<String> disciplinas) {
+		this.disciplinas = disciplinas;
 	}
 }

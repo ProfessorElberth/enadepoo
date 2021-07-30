@@ -1,11 +1,18 @@
 package br.edu.infnet.model.domain;
 
-public class Aluno {
+import br.edu.infnet.interfaces.ICadastravel;
+
+public class Aluno implements ICadastravel {
 
 	private String nome;
 	private String cpf;
 	private Contato contato;
 	
+	@Override
+	public void impressaoCadastral() {
+		System.out.println("Sou um aluno!!!");
+	}
+
 	@Override
 	public String toString() {
 		return nome +" - "+ contato.getEmail();
